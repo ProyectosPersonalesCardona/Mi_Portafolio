@@ -1,13 +1,43 @@
-.navbar{
-    background: linear-gradient(270deg, rgba(127,206,226,1) 50%, rgba(34,67,92,1) 100%);
-    justify-content: center !important;
-    
+*{
+    margin:0%;
+    padding: 0%;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100%;
 }
 
 h1{
     text-align: center;
     color: #22435C;
+    text-shadow: 1px 1px 2px black, 0 0 25px rgb(98, 98, 112), 0 0 5px rgb(19, 19, 20);
 }
+
+h2, h3{
+    color: #22435C;    
+    text-shadow: 1px 1px 2px black, 0 0 25px rgb(98, 98, 112), 0 0 5px rgb(19, 19, 20);
+}
+
+
+
+
+.navbar{
+    background: linear-gradient(270deg, rgba(127,206,226,1) 50%, rgba(34,67,92,1) 100%);
+    justify-content: center !important;
+    height: 100px;
+    
+}
+
+.btn-secondary:hover{
+    background-color: #22435C ;
+    scale: 1.2;
+}
+
+
+
+
 
 .perfil{
     justify-content:center !important;
@@ -17,17 +47,78 @@ h1{
     margin: auto;
     width: 25rem;
     box-shadow: 20px 10px 5px lightblue inset;
+}
+
+.figura_foto{
+    position: relative;
+    overflow: hidden;
+    height: 450px;
+}
+
+.figura_foto img{
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease-in-out;
+
     
+}
+
+.figura_foto .capa{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 103, 123,0.5);
+    color: #fff;
+    opacity: 0;
+    visibility:hidden;
+    border-radius: 10px;
+    visibility: hidden;
+    text-align: center;
+}
+
+.figura_foto:hover > .capa {
+    opacity: 1;
+    visibility:visible;
+}
+
+.figura_foto:hover > img {
+    scale: 1.1;
+}
+
+.figura_foto .capa h6{
+    transition: all 500ms ease-in-out;
+}
+
+
+.figura_foto:hover > .capa h6{
+   margin-top: 200px;
+}
+
+.figura_foto .capa p{
+    text-align: center;
+
+}
+
+.iconos_Redes_Sociales>a :hover{
+    stroke: #3a3a3a;
+    scale: 1.1;
 }
 
 .descargar_Cv{
     background-color: #22435C !important;
     color: #fff;
+
+    &:hover {
+        background-color: #3a3a3a !important;
+        color: #fff;
+        scale: 1.1;
+}
 }
 
-h3{
- color: #22435C;    
-}
+
+
+
 
 .secc1{
     border: 1px solid #22435C;
@@ -46,15 +137,22 @@ p{
     margin-top: 3%;
 }
 
+
+
+
+
 .secc2{
     margin-top: 3%;
     border: 1px solid #22435C;
     border-radius: 8px;
     box-shadow: 10px 10px 15px #898C8E;
+    display: block;
+    
 }
 
 .fila_iconos_leng{
     justify-content: center;
+
 }
 
 .icono_leng_Prog{
@@ -62,6 +160,11 @@ p{
     height: 70px;
     margin-inline: 50px;
     margin-bottom: 10px;
+    view-timeline-name: --seccion;
+    view-timeline-axis: block;
+
+    animation-timeline: --seccion;
+    animation-name: show_seccion;
 }
 
 .card2{
@@ -69,19 +172,100 @@ p{
     height: 200px;
     background-color: #22435C;
 }
+@keyframes show_seccion{
+    0%{
+        opacity: 0;
+        scale: 25%;
+        display: none;
+    }
+
+    100%{
+        opacity: 1;
+        scale: 100%;
+        display: block;
+    }
+}
+
+
+
 
 .secc3{
-    color: #fff;
-    background: rgb(34,67,92);
-    background: linear-gradient(270deg, rgba(34,67,92,1) 0%, rgba(127,206,226,1) 50%);
-    justify-content: center !important;
-    border: 1px solid #22435C;
+    color: #ffffff;
     border-radius: 8px;
 }
 
-.video{
-    width: 33%;
-    height: 400px;
-    border-radius: 10px;
-    opacity: 0.8;
+.titulo_proyecto{
+    text-align: center;
+    
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.row1{
+    background: linear-gradient(257deg, rgba(34,67,92,1) 0%, rgba(127,206,226,1) 100%);
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-shadow: 10px 10px 15px #22435C;
+    color: #fff;
+}
+.item_Proyecto{
+    display: flex;
+}
+
+.item_Proyecto>h5{
+    margin-left: 10px;
+}
+
+
+
+
+
+.secc4{
+    border-radius: 8px;
+    margin-bottom: 0%;
+    color: #22435C;
+    
+    view-timeline-name: --seccion;
+    view-timeline-axis: block;
+
+    animation-timeline: --seccion;
+    animation-name: show_seccion;
+    animation-range: entry 25% cover 50%
+}
+
+.titulo_educacion{
+    color: lightblue;
+    margin-bottom: 20px;
+}
+
+.secc4_insti{
+    border-radius: 5px;
+    color: #898C8E;
+}
+
+.secc4_insti_encabezado{
+    display: flex;
+}
+
+.secc4_insti_encabezado>h5{
+    margin-left: 10px;
+    color: #22435C;
+}
+
+
+
+
+
+footer{
+    text-align: center;
+    background: linear-gradient(0deg, rgba(34,67,92,1) 0%, rgba(127,206,226,1) 100%);
+    height: 200px;
+    color: #d4d2d2;
+    padding-top: 80px;
+    box-shadow: 10px 10px 15px  rgba(127,206,226,0.1) inset;
 }
