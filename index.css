@@ -2,11 +2,15 @@
     margin:0%;
     padding: 0%;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
 }
 
 body{
     width: 100%;
     height: 100%;
+    background-image:image-set("/public/LOGO_FONDO.png");
+    background-repeat: no-repeat;
+    background-position: 1190px 130px;
 }
 
 h1{
@@ -124,6 +128,7 @@ h2, h3{
     border: 1px solid #22435C;
     border-radius: 8px;
     box-shadow: 10px 10px 15px #898C8E;
+    background-color: #fff;
 }
 
 p{
