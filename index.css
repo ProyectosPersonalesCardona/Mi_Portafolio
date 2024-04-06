@@ -272,3 +272,20 @@ footer{
     padding-top: 80px;
     box-shadow: 10px 10px 15px  rgba(127,206,226,0.1) inset;
 }
+
+
+
+@media only screen and (max-width : 401px) {
+    
+    .card{
+        width: 18rem;
+    }
+
+    .figura_foto{
+    height: 250px;
+    }
+    .figura_foto:hover > .capa h6{
+        margin-top: 100px;
+     }
+
+}
