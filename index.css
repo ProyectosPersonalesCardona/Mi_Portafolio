@@ -107,7 +107,7 @@ h2, h3{
  
 }
 
-.descargar_Cv{
+.descargar_Cv, .btn_enviarIA {
     background-color: #22435C !important;
     color: #fff;
 
@@ -362,15 +362,84 @@ ul{
     }
 }
 
-form{
+form {
     display: flex;
-    input{
-        border-radius: 999999px;
-        border: 0;
-        flex-grow: 1;
-        padding: 8px;
-        margin-right: 8px;
-        border: 1px solid #ccc;
-        
+
+    input {
+      border-radius: 999999px;
+      flex-grow: 1;
+      border: 0;
+      padding: 8px;
+      margin-right: 8px;
+      border: 1px solid #ccc;
     }
-}
+
+    button {
+      background: #09f;
+      border: 0;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      padding: 8px;
+      transition: background .3s ease;
+
+      &[disabled] {
+        background: #ccc;
+        opacity: .6;
+        pointer-events: none;
+      }
+
+      &:hover {
+        background: rgb(0, 104, 173);
+      }
+    }
+  }
+
+  small {
+    font-size: 10px;
+    color: #555;
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    width: 400px;
+  }
+
+  .loading {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 15%;
+
+    i {
+      pointer-events: none;
+      width: 2.5em;
+      height: 2.5em;
+      border: 0.4em solid transparent;
+      border-color: #eee;
+      border-top-color: #3E67EC;
+      border-radius: 50%;
+      animation: loadingspin 1s linear infinite;
+    }
+
+    h4 {
+      color: #444;
+      margin-bottom: 8px;
+    }
+
+    h5 {
+      font-weight: 400;
+      margin: 0;
+      font-size: 10px;
+      opacity: .4;
+    }
+  }
+
+  @keyframes loadingspin {
+    100% {
+      transform: rotate(360deg)
+    }
+  }
