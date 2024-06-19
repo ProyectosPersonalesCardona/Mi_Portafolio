@@ -17,6 +17,7 @@
         <a class="btn btn-sm btn-secondary me-2" type="button" href="#secc2">Habilidades</a>
         <a class="btn btn-sm btn-secondary me-2" type="button" href="#secc3">Proyectos</a>
         <a class="btn btn-sm btn-secondary me-2" type="button" href="#secc4">Educación</a>
+        <a class="btn btn-sm btn-secondary me-2" type="button" href="#secc5">CHAT-GPT IA</a>
       </form>
     </nav>
     
@@ -245,6 +246,37 @@
         <h6>Desarrollo De Aplicaciones Web y Movil</h6>
       </div>
     </div>
+
+
+
+    <div class="container secc5" id="secc5">
+      <h2 class="mt-1 titulo_educacion">Chatea con Nuestra IA</h2>
+      <div>
+        <ul>
+          <li class="message bot">
+            <span>GPT</span>
+            <P>Esta es la respuesta del Boot</P>
+          </li>
+  
+          <li class="message user">
+            <span>TÚ</span>
+            <P>Esta es la pregunta del usuario</P>
+          </li>  
+        </ul> 
+      </div>
+    </div>
+
+    <form  class="container">
+      <input name="inp_chatIA" placeholder="Envia un mensaje a nuestra IA">
+      <button class="btn descargar_Cv">Enviar</button>
+    </form>
+    
+    <template id="message-template">
+      <li class="message">
+        <span></span>
+        <P></P>
+      </li>
+    </template>
   </main>
     
   <footer>
@@ -252,5 +284,6 @@
     <h5>©CopyRight 2024 All Rights Reserved</h5>
   </footer>
 </body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</html>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script type="module" src="ChatIA.js"></script>
+  </html>

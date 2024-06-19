@@ -1,7 +1,7 @@
 *{
     margin:0%;
     padding: 0%;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     
 }
 
@@ -291,5 +291,86 @@ footer{
     
     .icono_leng_Prog{
         margin-inline: 0px;
+    }
+}
+
+
+
+
+.secc5{
+    
+    max-width: 95%;
+    height: 50vh;
+    background: linear-gradient(0deg, rgba(127,206,226,1) 0%, rgba(34,67,92,1) 100%);
+    border: 1px solid #898C8E;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 8px;
+    margin-bottom: 16px;
+    overflow: auto;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+.message{
+    display: flex;
+    flex-direction: column;
+    margin: 4px 0;
+    padding: 4px 8px;
+
+    span {
+        width: 45px;
+        height: 45px;
+        font-size: 12px;
+        font-size:medium;
+        font-weight:bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+
+    p{
+        border-radius: 4px;
+        padding: 4px 8px;
+        margin-top: 8px;
+    }
+
+    &.user{
+        align-self: flex-end;
+        align-items: flex-end;
+
+        span, p {
+            background:rgba(127,206,226,1);
+            color: #000000;
+        }   
+    }
+
+    &.bot{
+        align-self: self-start;
+        span, p {
+            background: rgb(98, 98, 112);
+            color: #fff;
+        }  
+    }
+}
+
+form{
+    display: flex;
+    input{
+        border-radius: 999999px;
+        border: 0;
+        flex-grow: 1;
+        padding: 8px;
+        margin-right: 8px;
+        border: 1px solid #ccc;
+        
     }
 }
