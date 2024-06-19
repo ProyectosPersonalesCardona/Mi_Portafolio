@@ -402,7 +402,7 @@ $form.addEventListener('submit', async (event) => {
     }
 
     addMessage(messageText, 'user')
-    $button.setAttribute('disabled', true)
+    $button.setAttribute('disabled', '')
 
     const userMessage = {
         role: 'user',
