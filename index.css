@@ -2,7 +2,6 @@
     margin:0%;
     padding: 0%;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    
 }
 
 body{
@@ -11,6 +10,34 @@ body{
     background-image:image-set("/public/LOGO_FONDO2.png");
     background-repeat: no-repeat;
     background-position: 1190px 130px;
+}
+
+header {
+    background: linear-gradient(270deg, rgba(127,206,226,1) 50%, rgba(34,67,92,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & .logo{
+        max-width: 5rem;
+    }
+    & .nav-list{
+        justify-content: center !important;
+        height: 100px;
+        display: flex;
+        gap: 1rem;
+       list-style-type: none;
+       & li a{
+        text-decoration: none;
+       }
+    }
+    & .btn-secondary:hover{
+        background-color: #22435C ;
+        scale: 1.2;
+    }
+    & .btn-abrir-menu{
+        display: none;
+    }
 }
 
 h1{
@@ -27,17 +54,9 @@ h2, h3{
 
 
 
-.navbar{
-    background: linear-gradient(270deg, rgba(127,206,226,1) 50%, rgba(34,67,92,1) 100%);
-    justify-content: center !important;
-    height: 100px;
-    
-}
 
-.btn-secondary:hover{
-    background-color: #22435C ;
-    scale: 1.2;
-}
+
+
 
 
 
@@ -290,8 +309,41 @@ footer{
 
 @media only screen and (max-width : 401px) {
     
+    header{
+        & .nav{
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            position: absolute;
+            top: 0;
+            right: 0;
+            gap: 1rem;
+            padding: 2rem;
+            background-color: #1c1c1c;
+            bottom: 0;
+            box-shadow: 0 0 0 100vmax rgb(0, 0, 0, .5);
+        }
+
+        & .nav-list{
+            flex-direction: column;
+            align-items: end;
+            & li a{
+                color: #fff;
+            }
+        }
+
+         & .btn-abrir-menu{
+            display: block;
+        }
+        
+    }
+    
+
+
     .card{
         width: 18rem;
+        position: relative;
+
     }
 
     .figura_foto{

@@ -14,18 +14,19 @@
 
 <body>
   <header>
-    <nav class="navbar mt-1">
-      <form class="p-1 ">
-        <a class="btn btn-sm btn-secondary me-2" type="button" href="#secc1">Sobre Mi</a>
-        <a class="btn btn-sm btn-secondary me-2" type="button" href="#secc2">Habilidades</a>
-        <a class="btn btn-sm btn-secondary me-2" type="button" href="#secc3">Proyectos</a>
-        <a class="btn btn-sm btn-secondary me-2" type="button" href="#secc4">Educación</a>
-        <a class="btn btn-sm btn-secondary me-2" type="button" href="#secc5">Otros</a>
-      </form>
+    <img class="logo" src="./public/LOGO_FONDO2.png" alt="Logo"/>
+    <nav class="nav mt-1">
+      <button class="btn-abrir-menu">cerrar</button>
+      <ul class="p-1 nav-list">
+        <li><a class="btn me-2" type="button" href="#secc1">Sobre Mi</a></li>
+        <li><a class="btn me-2" type="button" href="#secc2">Sobre Mi</a></li>
+        <li><a class="btn me-2" type="button" href="#secc3">Sobre Mi</a></li>
+        <li><a class="btn me-2" type="button" href="#secc4">Sobre Mi</a></li>
+      </ul>
     </nav>
-
-    <div class="container text-center perfil ">
-      <h1 class="mt-3">Luis Enrique Cardona Castro</h1>
+  </header>
+  <div class="container text-center perfil ">
+    <h1 class="mt-3">Luis Enrique Cardona Castro</h1>
 
       <div class="card mt-3">
         <figure class="figura_foto">
@@ -101,7 +102,7 @@
         </div>
       </div>
     </div>
-  </header>
+
 
   <main class="my-5">
     <div class="container secc1" id="secc1">
@@ -298,7 +299,7 @@
 
     <h2 class="my-3 titulo_proyecto">Otros Proyectos</h2>
     <div class="container-fluid secc5_otros">
-        <video src="./public/VIDEO/CEISA.mp4" width="720" height="360" autoplay loop></video>
+        <video src="./public/VIDEO/CEISA.mp4" width="720" height="360" controls autoplay loop></video>
     </div>
   </main>
 
