@@ -263,6 +263,19 @@ a{
 
 
 
+.secc5_otros {
+    & video{
+        border-top-left-radius : 95px; 
+        border-bottom-right-radius : 95px; 
+        overflow: hidden;
+        box-shadow: 5px 5px 10px #aeb9c2;
+    }
+    
+}
+
+
+
+
 
 footer{
     text-align: center;
@@ -296,5 +309,10 @@ footer{
     .secc5_otros > video{
             width: 360px;
             height: 180px;
+            border-radius: 10px; 
+            overflow: hidden;
+            -webkit-transform: translateZ(0);
+            box-shadow: 0 19px 51px 0 rgba(0,0,0,0.16), 0 14px 19px 0 rgba(0,0,0,0.07);
+            
     }
 }
