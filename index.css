@@ -292,7 +292,7 @@ footer{
             top: 0;
             right: 0;
             gap: 1rem;
-            padding: 2rem;
+            padding: 1rem;
             background-color: #1c1c1c;
             bottom: 0;
             box-shadow: 0 0 0 100vmax rgb(0, 0, 0, .5);
@@ -315,7 +315,7 @@ footer{
 
 
     .card{
-        width: 18rem;
+        width: 20rem;
         position: relative;
 
     }
