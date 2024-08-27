@@ -40,9 +40,14 @@ body{
     justify-content: center !important;
     height: 100px;
     
+    .btn-secondary{
+        margin-left: 10px;
+    }
+
     & .btn-secondary:hover{
         background-color: #22435C ;
         scale: 1.2;
+        
     }
 }
 
@@ -284,6 +289,13 @@ footer{
 
 @media only screen and (max-width : 401px) {
     
+    .navbar{
+        & .btn-secondary{
+        margin-left: 0px;
+        }
+    }
+
+
     .card{
         width: 22rem;
         position: relative;
