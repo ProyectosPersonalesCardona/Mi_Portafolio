@@ -155,15 +155,16 @@ body{
     border: 1px solid #22435C;
     border-radius: 8px;
     box-shadow: 10px 10px 15px #898C8E;
-    display: block;
+   
     
     & .fila_iconos_leng{
+        display: flex;
         justify-content: center;
         
         & .icono_leng_Prog{
             width: 100px;
             height: 70px;
-            margin-inline: 50px;
+            margin-inline: 30px;
             margin-bottom: 10px;
             view-timeline-name: --seccion;
             view-timeline-axis: block;
@@ -283,54 +284,27 @@ footer{
 
 @media only screen and (max-width : 401px) {
     
-    header{
-        & .nav{
-            display: flex;
-            flex-direction: column;
-            align-items: end;
-            position: absolute;
-            top: 0;
-            right: 0;
-            gap: 1rem;
-            padding: 1rem;
-            background-color: #1c1c1c;
-            bottom: 0;
-            box-shadow: 0 0 0 100vmax rgb(0, 0, 0, .5);
-        }
-
-        & .nav-list{
-            flex-direction: column;
-            align-items: end;
-            & li a{
-                color: #fff;
-            }
-        }
-
-         & .btn-abrir-menu{
-            display: block;
-        }
-        
-    }
-    
-
-
     .card{
-        width: 20rem;
+        width: 22rem;
         position: relative;
-
     }
 
     .figura_foto{
-    height: 250px;
+    height: 100px;
     }
     
     .figura_foto:hover > .capa h6{
         margin-top: 100px;
     }
-    
-    .icono_leng_Prog{
-        margin-inline: 0px;
+
+    .secc2{
+        & .fila_iconos_leng{
+            flex-direction: row;
+        }
     }
+    
+
+
 
     .secc5 > video{
         width: 360px;
