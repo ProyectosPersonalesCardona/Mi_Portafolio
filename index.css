@@ -221,6 +221,16 @@ body{
     }
 }
 
+.secc31 {
+    & video{
+        border-top-left-radius : 95px; 
+        border-bottom-right-radius : 95px; 
+        overflow: hidden;
+        box-shadow: 5px 5px 10px #aeb9c2;
+    }
+    
+}
+
 
 
 
@@ -261,20 +271,24 @@ body{
 
 
 
+.secc5{
+    border-radius: 8px;
+    margin-bottom: 0%;
+    color: #22435C;
 
-.secc5 {
-    & video{
-        border-top-left-radius : 95px; 
-        border-bottom-right-radius : 95px; 
-        overflow: hidden;
-        box-shadow: 5px 5px 10px #aeb9c2;
+    & .titulo_diplomas{
+        color: lightblue;
+        margin-bottom: 20px;
     }
-    
+
+    img{
+        width: 450px;
+        height: 275PX;
+        border: 3px solid #22435C;
+        border-radius: 8%;
+        box-shadow: 3px 2px 10px #0581e7;
+    } 
 }
-
-
-
-
 
 
 footer{
@@ -285,6 +299,9 @@ footer{
     padding-top: 80px;
     box-shadow: 10px 10px 15px  rgba(127,206,226,0.1) inset;
 }
+
+
+
 
 
 @media only screen and (max-width : 401px) {
@@ -318,12 +335,24 @@ footer{
 
 
 
-    .secc5 > video{
+    .secc31 > video{
         width: 360px;
         height: 180px;
         border-radius: 10px; 
         overflow: hidden;
         transform: translateZ(0);
         box-shadow: 0 19px 51px 0 rgba(0,0,0,0.16), 0 14px 19px 0 rgba(0,0,0,0.07);
+    }
+
+
+
+    
+    .secc5{
+       margin-top: 20px !important;
+        img{
+            width: 280px;
+            height: 260PX;
+            border: 2px solid #22435C;
+        } 
     }
 }
