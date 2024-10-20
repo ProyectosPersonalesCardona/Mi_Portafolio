@@ -223,6 +223,8 @@ body{
 
 .secc31 {
     & video{
+        width:"720"; 
+        height:"360";
         border-top-left-radius : 95px; 
         border-bottom-right-radius : 95px; 
         overflow: hidden;
