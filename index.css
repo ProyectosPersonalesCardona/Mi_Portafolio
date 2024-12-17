@@ -315,7 +315,7 @@ footer{
 
 
 
-@media only screen and (max-width : 401px) {
+@media only screen and (max-width : 450px) {
     
     .navbar{
         & .btn-secondary{
