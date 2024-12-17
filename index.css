@@ -223,8 +223,8 @@ body{
 
 .secc31 {
     & video{
-        width:"720"; 
-        height:"360";
+        width:720px; 
+        height:360px;
         border-top-left-radius : 95px; 
         border-bottom-right-radius : 95px; 
         overflow: hidden;
@@ -293,6 +293,15 @@ body{
 }
 
 
+
+.chat-gpt>img{
+    width: 200px;
+}
+
+
+
+
+
 footer{
     text-align: center;
     background: linear-gradient(0deg, rgba(34,67,92,1) 0%, rgba(127,206,226,1) 100%);
@@ -334,7 +343,9 @@ footer{
         }
     }
     
-
+    .secc31{
+        width: 360px !important;
+    }
 
 
     .secc31 > video{
@@ -357,4 +368,6 @@ footer{
             border: 2px solid #22435C;
         } 
     }
+
+
 }
