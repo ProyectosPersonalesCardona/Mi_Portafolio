@@ -344,12 +344,12 @@ footer{
     }
     
     .secc31{
-        width: 360px !important;
+        width: 355px !important;
     }
 
 
     .secc31 > video{
-        width: 360px;
+        width: 350px !important;
         height: 180px;
         border-radius: 10px; 
         overflow: hidden;
