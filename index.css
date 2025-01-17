@@ -274,6 +274,10 @@ body{
 
 
 .secc5{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
     border-radius: 8px;
     margin-bottom: 0%;
     color: #22435C;
@@ -284,7 +288,8 @@ body{
     }
 
     img{
-        width: 450px;
+        width: calc(33.33% - 10px);
+        max-width: 950px;
         height: 275PX;
         border: 3px solid #22435C;
         border-radius: 8%;
@@ -345,13 +350,15 @@ footer{
     
     .secc31{
         width: 355px !important;
+        margin: 0px;
     }
 
 
     .secc31 > video{
         width: 350px !important;
         height: 180px;
-        border-radius: 10px; 
+        border-radius: 10px;
+      
         overflow: hidden;
         transform: translateZ(0);
         box-shadow: 0 19px 51px 0 rgba(0,0,0,0.16), 0 14px 19px 0 rgba(0,0,0,0.07);
@@ -361,10 +368,11 @@ footer{
 
     
     .secc5{
-       margin: 20px !important;
+       margin: 0px !important;
+       padding: 15px !important;
+       gap: 15px;
         img{
-            width: 200px;
-            height: 200PX;
+            width: calc(50% - 15px);;
             border: 2px solid #22435C;
         } 
     }
