@@ -9,20 +9,44 @@
   <link href="main.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="/public/LOGO_FONDO2.png">
 </head>  <body>
+    <!-- SVG Sprite para iconos reutilizables -->
+    <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="icon-github" viewBox="0 0 24 24">
+        <path d="M5.315 2.1c.791 -.113 1.9 .145 3.333 .966l.272 .161l.16 .1l.397 -.083a13.3 13.3 0 0 1 4.59 -.08l.456 .08l.396 .083l.161 -.1c1.385 -.84 2.487 -1.17 3.322 -1.148l.164 .008l.147 .017l.076 .014l.05 .011l.144 .047a1 1 0 0 1 .53 .514a5.2 5.2 0 0 1 .397 2.91l-.047 .267l-.046 .196l.123 .163c.574 .795 .93 1.728 1.03 2.707l.023 .295l.007 .272c0 3.855 -1.659 5.883 -4.644 6.68l-.245 .061l-.132 .029l.014 .161l.008 .157l.004 .365l-.002 .213l-.003 3.834a1 1 0 0 1 -.883 .993l-.117 .007h-6a1 1 0 0 1 -.993 -.883l-.007 -.117v-.734c-1.818 .26 -3.03 -.424 -4.11 -1.878l-.535 -.766c-.28 -.396 -.455 -.579 -.589 -.644l-.048 -.019a1 1 0 0 1 .564 -1.918c.642 .188 1.074 .568 1.57 1.239l.538 .769c.76 1.079 1.36 1.459 2.609 1.191l.001 -.678l-.018 -.168a5.03 5.03 0 0 1 -.021 -.824l.017 -.185l.019 -.12l-.108 -.024c-2.976 -.71 -4.703 -2.573 -4.875 -6.139l-.01 -.31l-.004 -.292a5.6 5.6 0 0 1 .908 -3.051l.152 -.222l.122 -.163l-.045 -.196a5.2 5.2 0 0 1 .145 -2.642l.1 -.282l.106 -.253a1 1 0 0 1 .529 -.514l.144 -.047l.154 -.03z" stroke-width="0" fill="currentColor" />
+      </symbol>
+      <symbol id="icon-project" viewBox="0 0 24 24">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M12 3a9 9 0 1 1 0 18a9 9 0 0 1 0 -18z" />
+        <path d="M6 12a6 6 0 0 1 6 -6" />
+      </symbol>
+      <symbol id="icon-badge" viewBox="0 0 24 24">
+        <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
+        <path d="M9 12l2 2l4 -4" />
+      </symbol>
+    </svg>
+
     <header>
       <nav class="navbar navbar-expand-lg mt-1">
-        <div class="container-fluid">
+        <div class="container">
           <a class="navbar-brand" href="#">
-            <img src="./public/LOGO_FONDO2.png" alt="Logo" width="45" height="45" class="d-inline-block align-text-top">
+            <img src="./public/LOGO_FONDO2.png" alt="Logo" class="logo-img">
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+          <button class="navbar-toggler" type="button" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <a class="btn btn-sm btn-secondary" href="#secc1">Sobre Mi</a>
-            <a class="btn btn-sm btn-secondary" href="#secc2">Habilidades</a>
-            <a class="btn btn-sm btn-secondary" href="#secc3">Proyectos</a>
-            <a class="btn btn-sm btn-secondary" href="#secc4">Educación</a>
+          <div class="navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav mx-auto">
+              <a class="nav-link nav-link-custom" href="#secc1">Sobre Mi</a>
+              <a class="nav-link nav-link-custom" href="#secc2">Habilidades</a>
+              <a class="nav-link nav-link-custom" href="#secc3">Proyectos</a>
+              <a class="nav-link nav-link-custom" href="#secc4">Educación</a>
+            </div>
+            <button class="btn-close-menu" aria-label="Cerrar menú">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
           </div>
         </div>
       </nav>
@@ -88,7 +112,7 @@
             <p>Mi nombre es Luis Cardona, centrado en el desarrollo de software desde el año 2023, puedo asumir las
               funciones tanto de frontend y backend developer, además, contar con habilidades comunicativas para trabajar
               con el resto del equipo y con el cliente. <br><br>
-              Eh tenido la oportunidad de desarrollar en forma grupal para entidades como King Boxing, veterinarias,
+              Eh tenido la oportunidad de desarrollar en forma grupal para entidades como King Boxing, veterinarias, sector gubernamental,
               ofrezco creatividad, capacidad analítica, solución de conflictos y cumplimiento de objetivos, trabajo y
               cooperación en equipo.</p>
           </div>
@@ -120,237 +144,370 @@
         </div>
       </section>
 
+      <!-- Proyectos Realizados -->
+      <div class="container secc3 mt-5" id="secc3">
+        <h2 class="my-3 titulo_proyecto">Proyectos Realizados</h2>
+
+        <div class="row1">
+        <div class="item_Proyecto my-3">
+            <svg class="icon-svg" width="28" height="28" stroke="#2F999E" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <use href="#icon-project"/>
+            </svg>
+            <h5>2026 - APP Movil de solicitudes - <span>ANSEC</span></h5>
+          </div>
+          <p>Diseñar, desarrollar e implementar la app oficial de solicitudes para tiendas mundiales Play Store y AppGallery. </p>
+          <a href="https://play.google.com/store/apps/details?id=com.ansec.permisos" target="_blank" class="github-link">
+            <svg class="icon-svg" width="28" height="28" stroke="#2F999E" fill="none" stroke-width="1.5">
+              <use href="#icon-github"/>
+            </svg> Enlace a Play Store
+          </a>
+          <a href="https://appgallery.huawei.com/app/C116536435" target="_blank" class="github-link  mx-3">
+            <svg class="icon-svg" width="28" height="28" stroke="#2F999E" fill="none" stroke-width="1.5">
+              <use href="#icon-github"/>
+            </svg> Enlace a AppGallery
+          </a>
+        </div>
+
+        <div class="row1">
+          <div class="item_Proyecto my-3">
+            <svg class="icon-svg" width="28" height="28" stroke="#2F999E" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <use href="#icon-project"/>
+            </svg>
+            <h5>2025 - Modulo de Solicitudes de Empleados - <span>ANSEC</span></h5>
+          </div>
+          <p>Diseñar, desarrollar e implementar diseño e integracion de todas las solictudes de los empleados de la ANSEC.</p>
+          <a href="https://www.sedh.gob.hn/humans.txt/" target="_blank" class="github-link">
+            <svg class="icon-svg" width="28" height="28" stroke="#2F999E" fill="none" stroke-width="1.5">
+              <use href="#icon-github"/>
+            </svg> Enlace a Repositorio
+          </a>
+        </div>
+
+        <div class="row1">
+          <div class="item_Proyecto my-3">
+            <svg class="icon-svg" width="28" height="28" stroke="#2F999E" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <use href="#icon-project"/>
+            </svg>
+            <h5>2025 - Sistema del Almacen - <span>Secretaria De Derechos Humanos</span></h5>
+          </div>
+          <p>Diseñar, desarrollar e implementar diseño e integracion de todas las solictudes de los empleados de la ANSEC.</p>
+          <a href="https://github.com/CarLuis07/BACKEND_ALMACEN_-SEDH" target="_blank" class="github-link">
+            <svg class="icon-svg" width="28" height="28" stroke="#2F999E" fill="none" stroke-width="1.5">
+              <use href="#icon-github"/>
+            </svg> Enlace a Repositorio
+          </a>
+        </div>
+
+        <div class="row1">
+          <div class="item_Proyecto my-3">
+            <svg class="icon-svg" width="28" height="28" stroke="#2F999E" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <use href="#icon-project"/>
+            </svg>
+            <h5>2025 - Pagina Web Oficial - <span>Secretaria De Derechos Humanos</span></h5>
+          </div>
+          <p>Diseñar, desarrollar e implementar diseño e integracion de la pagina oficial de la SEDH para todos los tipos de dispositivos</p>
+          <a href="https://www.sedh.gob.hn/humans.txt/" target="_blank" class="github-link">
+            <svg class="icon-svg" width="28" height="28" stroke="#2F999E" fill="none" stroke-width="1.5">
+              <use href="#icon-github"/>
+            </svg> Enlace a Repositorio
+          </a>
+        </div>
+
+        <div class="row1">        
+          <div class="item_Proyecto my-3">
+            <svg class="icon-svg" width="28" height="28" stroke="#2F999E" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <use href="#icon-project"/>
+            </svg>
+            <h5>2025 - Sistema de Permisos - <span>Secretaria De Derechos Humanos</span></h5>
+          </div>
+          <p>Diseñar, desarrollar e implementar baseDatos, BackEnd, FrontEnd de todos los permisos para todos los empleados de la SEDH.</p>
+          <a href="https://github.com/CarLuis07/FRONTEND_PERMISOS_SEDH" target="_blank" class="github-link">
+            <svg class="icon-svg" width="28" height="28" stroke="#2F999E" fill="none" stroke-width="1.5">
+              <use href="#icon-github"/>
+            </svg> Enlace a Repositorio
+          </a>
+        </div>
+
+        <div class="row1">
+          <div class="item_Proyecto my-3">
+            <svg class="icon-svg" width="28" height="28" stroke="#2F999E" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <use href="#icon-project"/>
+            </svg>
+            <h5>2024 - Comparación de Vehiculos - <span>Benchmark Honduras</span></h5>
+          </div>
+          <p>Diseñar, desarrollar e implementar baseDatos, BackEnd, FrontEnd, dicho sistema
+            conllevaba comparar vehiculos, comparar precios, hacer analisis estadisticos y exportarlos a excel y PDf esto en una parte administrativa.</p>
+          <a href="https://github.com/lg-4/BackendLenguajeIV" target="_blank" class="github-link">
+            <svg class="icon-svg" width="28" height="28" stroke="#2F999E" fill="none" stroke-width="1.5">
+              <use href="#icon-github"/>
+            </svg> Enlace a Repositorio
+          </a>
+        </div>
+
+        <div class="row1">
+          <div class="item_Proyecto my-3">
+            <svg class="icon-svg" width="28" height="28" stroke="#2F999E" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <use href="#icon-project"/>
+            </svg>
+            <h5>2024 - Sistema Interno Consultas veterinaria - <span>AgroComercial El Campo</span></h5>
+          </div>
+          <p>Diseñar, desarrollar e implementar FrontEnd para la veterinarias, dicho sistema conllevaba realizar
+            Formularios, busqueda de expedientes, proximas citas de los veterinarios.</p>
+          <a href="https://github.com/ProyectosPersonalesCardona/Clinica_Veterinaria" target="_blank" class="github-link">
+            <svg class="icon-svg" width="28" height="28" stroke="#2F999E" fill="none" stroke-width="1.5">
+              <use href="#icon-github"/>
+            </svg> Enlace a Repositorio
+          </a>
+        </div>
+
+        <div class="row1">
+          <div class="item_Proyecto my-3">
+            <svg class="icon-svg" width="28" height="28" stroke="#2F999E" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <use href="#icon-project"/>
+            </svg>
+            <h5>2023 - Sistema de Registro Escuela de Boxeo - <span>Sambo Honduras</span></h5>
+          </div>
+          <p>Diseñar, desarrollar e implementar baseDatos, BackEnd, FrontEnd para una Escuela de Boxeo, dicho sistema
+            conllevaba una landingPage publica, una parte administrativa, roles de acceso, para poder ingresar informacion
+            tanto de estudiantes, maestros como la landingPage</p>
+          <a href="https://github.com/ProyectosPersonalesCardona/sambo-FrontEnd" target="_blank" class="github-link">
+            <svg class="icon-svg" width="28" height="28" stroke="#2F999E" fill="none" stroke-width="1.5">
+              <use href="#icon-github"/>
+            </svg> Enlace a Repositorio
+          </a>
+        </div>
+      </div>
+
       <!-- Habilidades -->
       <section class="container secc2 mt-5" id="secc2">
         <h3 class="mt-3">Habilidades Profesionales</h3>
         <div class="my-5">
           <div class="row fila_iconos_leng">
-            <img src="/public/html-css.png" class="icono_leng_Prog" alt="HTML/CSS">
-            <img src="/public/reacjs.png" class="icono_leng_Prog" alt="React">
-            <img src="/public/Angular.png" class="icono_leng_Prog" alt="Angular">
-            <img src="/public/xamarin.png" class="icono_leng_Prog" alt="Xamarin">
-            <img src="/public/Bootstrap.png" class="icono_leng_Prog" alt="Bootstrap">
-            <img src="/public/tailwindcss.png" class="icono_leng_Prog" alt="TailwindCSS">
-            <img src="/public/git.png" class="icono_leng_Prog" alt="Git">
-            <img src="/public/jquery.png" class="icono_leng_Prog" alt="jQuery">
-            <img src="/public/Node.png" class="icono_leng_Prog" alt="Node.js">
-            <img src="/public/typescript.png" class="icono_leng_Prog" alt="TypeScript">
-            <img src="/public/AWS.png" class="icono_leng_Prog" alt="AWS">
-            <img src="/public/docker.png" class="icono_leng_Prog" alt="Docker">
-            <img src="/public/msql.png" class="icono_leng_Prog" alt="SQL">
-            <img src="/public/mysql.png" class="icono_leng_Prog" alt="MySQL">
-            <img src="/public/posgrees.png" class="icono_leng_Prog" alt="PostgreSQL">
-            <img src="/public/oracle.png" class="icono_leng_Prog" alt="Oracle">
-            <img src="/public/javascritp.png" class="icono_leng_Prog" alt="JavaScript">
-            <img src="/public/php.png" class="icono_leng_Prog" alt="PHP">
-            <img src="/public/java.png" class="icono_leng_Prog" alt="Java">
-            <img src="/public/net.png" class="icono_leng_Prog" alt=".NET">
-            <img src="/public/ionic.png" class="icono_leng_Prog" alt="Ionic">
+            <div class="skill-item">
+              <img src="/public/html-css.png" class="icono_leng_Prog" alt="HTML/CSS">
+              <span class="skill-name">HTML/CSS</span>
+            </div>
+            <div class="skill-item">
+              <img src="/public/reacjs.png" class="icono_leng_Prog" alt="React">
+              <span class="skill-name">React</span>
+            </div>
+            <div class="skill-item">
+              <img src="/public/Angular.png" class="icono_leng_Prog" alt="Angular">
+              <span class="skill-name">Angular</span>
+            </div>
+            <div class="skill-item">
+              <img src="/public/xamarin.png" class="icono_leng_Prog" alt="Xamarin">
+              <span class="skill-name">Xamarin</span>
+            </div>
+            <div class="skill-item">
+              <img src="/public/Bootstrap.png" class="icono_leng_Prog" alt="Bootstrap">
+              <span class="skill-name">Bootstrap</span>
+            </div>
+            <div class="skill-item">
+              <img src="/public/tailwindcss.png" class="icono_leng_Prog" alt="TailwindCSS">
+              <span class="skill-name">TailwindCSS</span>
+            </div>
+            <div class="skill-item">
+              <img src="/public/git.png" class="icono_leng_Prog" alt="Git">
+              <span class="skill-name">Git</span>
+            </div>
+            <div class="skill-item">
+              <img src="/public/jquery.png" class="icono_leng_Prog" alt="jQuery">
+              <span class="skill-name">jQuery</span>
+            </div>
+            <div class="skill-item">
+              <img src="/public/Node.png" class="icono_leng_Prog" alt="Node.js">
+              <span class="skill-name">Node.js</span>
+            </div>
+            <div class="skill-item">
+              <img src="/public/typescript.png" class="icono_leng_Prog" alt="TypeScript">
+              <span class="skill-name">TypeScript</span>
+            </div>
+            <div class="skill-item">
+              <img src="/public/AWS.png" class="icono_leng_Prog" alt="AWS">
+              <span class="skill-name">AWS</span>
+            </div>
+            <div class="skill-item">
+              <img src="/public/docker.png" class="icono_leng_Prog" alt="Docker">
+              <span class="skill-name">Docker</span>
+            </div>
+            <div class="skill-item">
+              <img src="/public/msql.png" class="icono_leng_Prog" alt="SQL">
+              <span class="skill-name">SQL</span>
+            </div>
+            <div class="skill-item">
+              <img src="/public/mysql.png" class="icono_leng_Prog" alt="MySQL">
+              <span class="skill-name">MySQL</span>
+            </div>
+            <div class="skill-item">
+              <img src="/public/posgrees.png" class="icono_leng_Prog" alt="PostgreSQL">
+              <span class="skill-name">PostgreSQL</span>
+            </div>
+            <div class="skill-item">
+              <img src="/public/oracle.png" class="icono_leng_Prog" alt="Oracle">
+              <span class="skill-name">Oracle</span>
+            </div>
+            <div class="skill-item">
+              <img src="/public/javascritp.png" class="icono_leng_Prog" alt="JavaScript">
+              <span class="skill-name">JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <img src="/public/php.png" class="icono_leng_Prog" alt="PHP">
+              <span class="skill-name">PHP</span>
+            </div>
+            <div class="skill-item">
+              <img src="/public/java.png" class="icono_leng_Prog" alt="Java">
+              <span class="skill-name">Java</span>
+            </div>
+            <div class="skill-item">
+              <img src="/public/net.png" class="icono_leng_Prog" alt=".NET">
+              <span class="skill-name">.NET</span>
+            </div>
+            <div class="skill-item">
+              <img src="/public/ionic.png" class="icono_leng_Prog" alt="Ionic">
+              <span class="skill-name">Ionic</span>
+            </div>
+            <div class="skill-item">
+              <img src="/public/python.png" class="icono_leng_Prog" alt="Python">
+              <span class="skill-name">Python</span>
+            </div>
+            <div class="skill-item">
+              <img src="/public/vue.png" class="icono_leng_Prog" alt="Vue">
+              <span class="skill-name">Vue</span>
+            </div>
           </div>
         </div>
       </section>
 
-
-    <div class="container secc3 mt-5" id="secc3">
-      <h2 class="my-3 titulo_proyecto">Proyectos Realizados</h2>
-
-      <div class="row1">
-        <div class="item_Proyecto my-3">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-inner-shadow-top-left" width="28"
-            height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2F999E" fill="none" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M12 3a9 9 0 1 1 0 18a9 9 0 0 1 0 -18z" />
-            <path d="M6 12a6 6 0 0 1 6 -6" />
-          </svg>
-          <h5>2024 - FrontEnd Developer - <span>AgroComercial El Campo</span></h5>
-        </div>
-        <p>Diseñar, desarrollar e implementar FrontEnd para la veterinarias, dicho sistema conllevaba realizar
-          Formularios, busqueda de expedientes, proximas citas de los veterinarios.</p>
-        <a href="https://github.com/ProyectosPersonalesCardona/Clinica_Veterinaria" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github-filled" width="28"
-            height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2F999E" fill="none" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path
-              d="M5.315 2.1c.791 -.113 1.9 .145 3.333 .966l.272 .161l.16 .1l.397 -.083a13.3 13.3 0 0 1 4.59 -.08l.456 .08l.396 .083l.161 -.1c1.385 -.84 2.487 -1.17 3.322 -1.148l.164 .008l.147 .017l.076 .014l.05 .011l.144 .047a1 1 0 0 1 .53 .514a5.2 5.2 0 0 1 .397 2.91l-.047 .267l-.046 .196l.123 .163c.574 .795 .93 1.728 1.03 2.707l.023 .295l.007 .272c0 3.855 -1.659 5.883 -4.644 6.68l-.245 .061l-.132 .029l.014 .161l.008 .157l.004 .365l-.002 .213l-.003 3.834a1 1 0 0 1 -.883 .993l-.117 .007h-6a1 1 0 0 1 -.993 -.883l-.007 -.117v-.734c-1.818 .26 -3.03 -.424 -4.11 -1.878l-.535 -.766c-.28 -.396 -.455 -.579 -.589 -.644l-.048 -.019a1 1 0 0 1 .564 -1.918c.642 .188 1.074 .568 1.57 1.239l.538 .769c.76 1.079 1.36 1.459 2.609 1.191l.001 -.678l-.018 -.168a5.03 5.03 0 0 1 -.021 -.824l.017 -.185l.019 -.12l-.108 -.024c-2.976 -.71 -4.703 -2.573 -4.875 -6.139l-.01 -.31l-.004 -.292a5.6 5.6 0 0 1 .908 -3.051l.152 -.222l.122 -.163l-.045 -.196a5.2 5.2 0 0 1 .145 -2.642l.1 -.282l.106 -.253a1 1 0 0 1 .529 -.514l.144 -.047l.154 -.03z"
-              stroke-width="0" fill="currentColor" />
-          </svg> Enlace a Repositorio
-        </a>
-      </div>
-
-      <div class="row1">
-        <div class="item_Proyecto my-3">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-inner-shadow-top-left" width="28"
-            height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2F999E" fill="none" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M12 3a9 9 0 1 1 0 18a9 9 0 0 1 0 -18z" />
-            <path d="M6 12a6 6 0 0 1 6 -6" />
-          </svg>
-          <h5>2023 - FullStack Developer - <span>Sambo Honduras</span></h5>
-        </div>
-        <p>Diseñar, desarrollar e implementar baseDatos, BackEnd, FrontEnd para una Escuela de Boxeo, dicho sistema
-          conllevaba una landingPage publica, una parte administrativa, roles de acceso, para poder ingresar informacion
-          tanto de estudiantes, maestros como la landingPage</p>
-        <a href="https://github.com/ProyectosPersonalesCardona/sambo-FrontEnd" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github-filled" width="28"
-            height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2F999E" fill="none" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path
-              d="M5.315 2.1c.791 -.113 1.9 .145 3.333 .966l.272 .161l.16 .1l.397 -.083a13.3 13.3 0 0 1 4.59 -.08l.456 .08l.396 .083l.161 -.1c1.385 -.84 2.487 -1.17 3.322 -1.148l.164 .008l.147 .017l.076 .014l.05 .011l.144 .047a1 1 0 0 1 .53 .514a5.2 5.2 0 0 1 .397 2.91l-.047 .267l-.046 .196l.123 .163c.574 .795 .93 1.728 1.03 2.707l.023 .295l.007 .272c0 3.855 -1.659 5.883 -4.644 6.68l-.245 .061l-.132 .029l.014 .161l.008 .157l.004 .365l-.002 .213l-.003 3.834a1 1 0 0 1 -.883 .993l-.117 .007h-6a1 1 0 0 1 -.993 -.883l-.007 -.117v-.734c-1.818 .26 -3.03 -.424 -4.11 -1.878l-.535 -.766c-.28 -.396 -.455 -.579 -.589 -.644l-.048 -.019a1 1 0 0 1 .564 -1.918c.642 .188 1.074 .568 1.57 1.239l.538 .769c.76 1.079 1.36 1.459 2.609 1.191l.001 -.678l-.018 -.168a5.03 5.03 0 0 1 -.021 -.824l.017 -.185l.019 -.12l-.108 -.024c-2.976 -.71 -4.703 -2.573 -4.875 -6.139l-.01 -.31l-.004 -.292a5.6 5.6 0 0 1 .908 -3.051l.152 -.222l.122 -.163l-.045 -.196a5.2 5.2 0 0 1 .145 -2.642l.1 -.282l.106 -.253a1 1 0 0 1 .529 -.514l.144 -.047l.154 -.03z"
-              stroke-width="0" fill="currentColor" />
-          </svg> Enlace a Repositorio
-        </a>
-      </div>
-    
-      <div class="row1">
-        <div class="item_Proyecto my-3">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-inner-shadow-top-left" width="28"
-            height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2F999E" fill="none" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M12 3a9 9 0 1 1 0 18a9 9 0 0 1 0 -18z" />
-            <path d="M6 12a6 6 0 0 1 6 -6" />
-          </svg>
-          <h5>2024 - FullStack Developer - <span>Benchmark Honduras</span></h5>
-        </div>
-        <p>Diseñar, desarrollar e implementar baseDatos, BackEnd, FrontEnd, dicho sistema
-          conllevaba comparar vehiculos, comparar precios, hacer analisis estadisticos y exportarlos a excel y PDf esto en una parte administrativa.</p>
-        <a href="https://github.com/lg-4/BackendLenguajeIV" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github-filled" width="28"
-            height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2F999E" fill="none" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path
-              d="M5.315 2.1c.791 -.113 1.9 .145 3.333 .966l.272 .161l.16 .1l.397 -.083a13.3 13.3 0 0 1 4.59 -.08l.456 .08l.396 .083l.161 -.1c1.385 -.84 2.487 -1.17 3.322 -1.148l.164 .008l.147 .017l.076 .014l.05 .011l.144 .047a1 1 0 0 1 .53 .514a5.2 5.2 0 0 1 .397 2.91l-.047 .267l-.046 .196l.123 .163c.574 .795 .93 1.728 1.03 2.707l.023 .295l.007 .272c0 3.855 -1.659 5.883 -4.644 6.68l-.245 .061l-.132 .029l.014 .161l.008 .157l.004 .365l-.002 .213l-.003 3.834a1 1 0 0 1 -.883 .993l-.117 .007h-6a1 1 0 0 1 -.993 -.883l-.007 -.117v-.734c-1.818 .26 -3.03 -.424 -4.11 -1.878l-.535 -.766c-.28 -.396 -.455 -.579 -.589 -.644l-.048 -.019a1 1 0 0 1 .564 -1.918c.642 .188 1.074 .568 1.57 1.239l.538 .769c.76 1.079 1.36 1.459 2.609 1.191l.001 -.678l-.018 -.168a5.03 5.03 0 0 1 -.021 -.824l.017 -.185l.019 -.12l-.108 -.024c-2.976 -.71 -4.703 -2.573 -4.875 -6.139l-.01 -.31l-.004 -.292a5.6 5.6 0 0 1 .908 -3.051l.152 -.222l.122 -.163l-.045 -.196a5.2 5.2 0 0 1 .145 -2.642l.1 -.282l.106 -.253a1 1 0 0 1 .529 -.514l.144 -.047l.154 -.03z"
-              stroke-width="0" fill="currentColor" />
-          </svg> Enlace a Repositorio
-        </a>
-      </div>
-
-      <div class="row1">
-        <div class="item_Proyecto my-3">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-inner-shadow-top-left" width="28"
-            height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2F999E" fill="none" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M12 3a9 9 0 1 1 0 18a9 9 0 0 1 0 -18z" />
-            <path d="M6 12a6 6 0 0 1 6 -6" />
-          </svg>
-          <h5> 2025 - FullStack Developer - <h5>- Secretaria De Derechos Humanos </h5>
-          </h5>
-        </div>
-        <p>Diseñar, desarrollar e implementar baseDatos, BackEnd, FrontEnd de todos los permisos para todos los empleados de la SEDH.</p>
-        <a href="https://github.com/CarLuis07/FRONTEND_PERMISOS_SEDH" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github-filled" width="28"
-            height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2F999E" fill="none" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path
-              d="M5.315 2.1c.791 -.113 1.9 .145 3.333 .966l.272 .161l.16 .1l.397 -.083a13.3 13.3 0 0 1 4.59 -.08l.456 .08l.396 .083l.161 -.1c1.385 -.84 2.487 -1.17 3.322 -1.148l.164 .008l.147 .017l.076 .014l.05 .011l.144 .047a1 1 0 0 1 .53 .514a5.2 5.2 0 0 1 .397 2.91l-.047 .267l-.046 .196l.123 .163c.574 .795 .93 1.728 1.03 2.707l.023 .295l.007 .272c0 3.855 -1.659 5.883 -4.644 6.68l-.245 .061l-.132 .029l.014 .161l.008 .157l.004 .365l-.002 .213l-.003 3.834a1 1 0 0 1 -.883 .993l-.117 .007h-6a1 1 0 0 1 -.993 -.883l-.007 -.117v-.734c-1.818 .26 -3.03 -.424 -4.11 -1.878l-.535 -.766c-.28 -.396 -.455 -.579 -.589 -.644l-.048 -.019a1 1 0 0 1 .564 -1.918c.642 .188 1.074 .568 1.57 1.239l.538 .769c.76 1.079 1.36 1.459 2.609 1.191l.001 -.678l-.018 -.168a5.03 5.03 0 0 1 -.021 -.824l.017 -.185l.019 -.12l-.108 -.024c-2.976 -.71 -4.703 -2.573 -4.875 -6.139l-.01 -.31l-.004 -.292a5.6 5.6 0 0 1 .908 -3.051l.152 -.222l.122 -.163l-.045 -.196a5.2 5.2 0 0 1 .145 -2.642l.1 -.282l.106 -.253a1 1 0 0 1 .529 -.514l.144 -.047l.154 -.03z"
-              stroke-width="0" fill="currentColor" />
-          </svg> Enlace a Repositorio
-        </a>
-      </div>
-
-      <div class="row1">
-        <div class="item_Proyecto my-3">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-inner-shadow-top-left" width="28"
-            height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2F999E" fill="none" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M12 3a9 9 0 1 1 0 18a9 9 0 0 1 0 -18z" />
-            <path d="M6 12a6 6 0 0 1 6 -6" />
-          </svg>
-          <h5> 2025 - FullStack Developer - <h5>- Secretaria De Derechos Humanos </h5>
-          </h5>
-        </div>
-        <p>Diseñar, desarrollar e implementar diseño e integracion de la pagina oficial de la SEDH para todos los tipos de dispositivos</p>
-        <a href="https://www.sedh.gob.hn/humans.txt/" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github-filled" width="28"
-            height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2F999E" fill="none" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path
-              d="M5.315 2.1c.791 -.113 1.9 .145 3.333 .966l.272 .161l.16 .1l.397 -.083a13.3 13.3 0 0 1 4.59 -.08l.456 .08l.396 .083l.161 -.1c1.385 -.84 2.487 -1.17 3.322 -1.148l.164 .008l.147 .017l.076 .014l.05 .011l.144 .047a1 1 0 0 1 .53 .514a5.2 5.2 0 0 1 .397 2.91l-.047 .267l-.046 .196l.123 .163c.574 .795 .93 1.728 1.03 2.707l.023 .295l.007 .272c0 3.855 -1.659 5.883 -4.644 6.68l-.245 .061l-.132 .029l.014 .161l.008 .157l.004 .365l-.002 .213l-.003 3.834a1 1 0 0 1 -.883 .993l-.117 .007h-6a1 1 0 0 1 -.993 -.883l-.007 -.117v-.734c-1.818 .26 -3.03 -.424 -4.11 -1.878l-.535 -.766c-.28 -.396 -.455 -.579 -.589 -.644l-.048 -.019a1 1 0 0 1 .564 -1.918c.642 .188 1.074 .568 1.57 1.239l.538 .769c.76 1.079 1.36 1.459 2.609 1.191l.001 -.678l-.018 -.168a5.03 5.03 0 0 1 -.021 -.824l.017 -.185l.019 -.12l-.108 -.024c-2.976 -.71 -4.703 -2.573 -4.875 -6.139l-.01 -.31l-.004 -.292a5.6 5.6 0 0 1 .908 -3.051l.152 -.222l.122 -.163l-.045 -.196a5.2 5.2 0 0 1 .145 -2.642l.1 -.282l.106 -.253a1 1 0 0 1 .529 -.514l.144 -.047l.154 -.03z"
-              stroke-width="0" fill="currentColor" />
-          </svg> Enlace a Repositorio
-        </a>
-      </div>
-    </div>
-
-      <!-- Otros Proyectos -->
-      <section class="container-fluid mt-5 secc31">
-        <h2 class="m-3 titulo_proyecto">Otros Proyectos</h2>
-        <video src="./public/VIDEO/CEISA.mp4" controls autoplay loop></video>
-      </section>
-
-      <!-- Educación -->
-      <section class="container-fluid secc4 p-5" id="secc4">
-        <h2 class="mt-5 titulo_educacion">Educación</h2>
-        
-        <div class="secc4_insti">
-          <div class="secc4_insti_encabezado">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2F999E" fill="none">
-              <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
-              <path d="M9 12l2 2l4 -4" />
-            </svg>
-            <h5>Instituto San José Del Pedregal</h5>
+      <!-- Otros Proyectos y Educación en 2 Columnas -->
+      <section class="container-fluid proyectos-educacion-section mt-5">
+        <div class="row">
+          <!-- Otros Proyectos -->
+          <div class="col-lg-6">
+            <div class="secc31">
+              <h2 class="titulo_proyecto">Otros Proyectos</h2>
+              <video src="./public/VIDEO/CEISA.mp4" controls autoplay loop></video>
+            </div>
           </div>
-          <h6>Técnico En Informatica</h6>
-        </div>
+          
+          <!-- Educación -->
+          <div class="col-lg-6">
+            <div class="secc4" id="secc4">
+              <h2 class="titulo_educacion">Educación</h2>
+              
+              <div class="secc4_insti">
+                <div class="secc4_insti_encabezado">
+                  <svg class="icon-svg" width="28" height="28" stroke="#2F999E" fill="none" stroke-width="1.5">
+                    <use href="#icon-badge"/>
+                  </svg>
+                  <h5>Instituto San José Del Pedregal</h5>
+                </div>
+                <h6>Técnico En Informatica</h6>
+              </div>
 
-        <div class="secc4_insti my-5">
-          <div class="secc4_insti_encabezado">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2F999E" fill="none">
-              <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
-              <path d="M9 12l2 2l4 -4" />
-            </svg>
-            <h5>Universidad Nacional Autonoma De Honduras (UNAH)</h5>
-          </div>
-          <h6>Licenciatura En Informatica</h6>
-        </div>
+              <div class="secc4_insti">
+                <div class="secc4_insti_encabezado">
+                  <svg class="icon-svg" width="28" height="28" stroke="#2F999E" fill="none" stroke-width="1.5">
+                    <use href="#icon-badge"/>
+                  </svg>
+                  <h5>Universidad Nacional Autonoma De Honduras (UNAH)</h5>
+                </div>
+                <h6>Licenciatura En Informatica</h6>
+              </div>
 
-        <div class="secc4_insti">
-          <div class="secc4_insti_encabezado">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2F999E" fill="none">
-              <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
-              <path d="M9 12l2 2l4 -4" />
-            </svg>
-            <h5>Universidad De Unitec</h5>
+              <div class="secc4_insti">
+                <div class="secc4_insti_encabezado">
+                  <svg class="icon-svg" width="28" height="28" stroke="#2F999E" fill="none" stroke-width="1.5">
+                    <use href="#icon-badge"/>
+                  </svg>
+                  <h5>Universidad De Unitec</h5>
+                </div>
+                <h6>Desarrollo De Aplicaciones Web y Movil</h6>
+              </div>
+
+              <div class="secc4_insti">
+                <div class="secc4_insti_encabezado">
+                  <svg class="icon-svg" width="28" height="28" stroke="#2F999E" fill="none" stroke-width="1.5">
+                    <use href="#icon-badge"/>
+                  </svg>
+                  <h5>Universidad De Unitec</h5>
+                </div>
+                <h6>Ingenieria en Sistemas</h6>
+              </div>
+
+            </div>
           </div>
-          <h6>Desarrollo De Aplicaciones Web y Movil</h6>
         </div>
       </section>
 
-      <!-- Diplomas y Cursos -->
-      <section class="container m-5 secc5 diplomas">
-        <h2 class="titulo_diplomas">Diplomas y Cursos</h2>
-        <img src="/public/CursoNodeJsPro.png" alt="diploma">
-        <img src="/public/certificad-curso-apis-django.png" alt="diploma">
-        <img src="/public/certificad-curso-apis-python.png" alt="diploma">
-        <img src="/public/certificad-curso-django.png" alt="diploma">
-        <img src="/public/certificad-curso-microservicios.png" alt="diploma">
-        <img src="/public/certificad-curso-poo-python.png" alt="diploma">
-        <img src="/public/certificad-curso-python-avanzado.png" alt="diploma">
-        <img src="/public/certificad-curso-python.png" alt="diploma">
-        <img src="/public/certificad-curso-webscraping-python-node.png" alt="diploma">
-      </section>
-
-      <!-- Chat GPT -->
-      <section class="secc6 container chat-gpt">
-        <h2 class="mt-5 titulo_proyecto">Inteligencia Artificial con nuestro Chat GPT</h2>
-        <p>Seccion y etapa en desarrollo</p>
-        <img src="https://static.vecteezy.com/ti/gratis-vektor/t1/8568878-website-seite-nicht-gefunden-fehler-404-oops-besorgt-robotercharakter-spaht-aus-dem-weltraum-website-absturz-bei-technischer-arbeit-webdesign-vorlage-mit-chatbot-maskottchen-cartoon-online-bot-unterstutzung-ausfall-vektor.jpg" alt="Error 404">
+      <!-- Diplomas y Chat IA en 2 Columnas -->
+      <section class="container-fluid diplomas-ia-section mt-5">
+        <div class="row">
+          <!-- Diplomas y Cursos -->
+          <div class="col-lg-8">
+            <div class="secc5 diplomas">
+              <h2 class="titulo_diplomas">Diplomas y Cursos</h2>
+              <div class="diplomas-grid">
+                <img src="/public/CursoNodeJsPro.png" alt="diploma">
+                <img src="/public/certificad-curso-apis-django.png" alt="diploma">
+                <img src="/public/certificad-curso-apis-python.png" alt="diploma">
+                <img src="/public/certificad-curso-django.png" alt="diploma">
+                <img src="/public/certificad-curso-microservicios.png" alt="diploma">
+                <img src="/public/certificad-curso-poo-python.png" alt="diploma">
+                <img src="/public/certificad-curso-python-avanzado.png" alt="diploma">
+                <img src="/public/certificad-curso-python.png" alt="diploma">
+                <img src="/public/certificad-curso-webscraping-python-node.png" alt="diploma">
+              </div>
+            </div>
+          </div>
+          
+          <!-- Chat IA -->
+          <div class="col-lg-4">
+            <div class="secc6 chat-gpt">
+              <h2 class="titulo_proyecto">Chat IA</h2>
+              <div class="chat-container">
+                <div class="chat-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#2F999E" stroke-width="1.5">
+                    <path d="M8 9h8"/>
+                    <path d="M8 13h6"/>
+                    <path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z"/>
+                  </svg>
+                </div>
+                <h4>Asistente Inteligente</h4>
+                <p class="chat-description">Estamos trabajando en una experiencia conversacional innovadora para mejorar tu interacción con el portafolio.</p>
+                <div class="coming-soon">
+                  <span>🚀</span>
+                  <span>Próximamente</span>
+                </div>
+                
+                <!-- Input de chat estilo WhatsApp -->
+                <div class="chat-input-container">
+                  <input type="text" class="chat-input" placeholder="Escribe un mensaje..." disabled>
+                  <button class="chat-send-btn" disabled>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="22" y1="2" x2="11" y2="13"></line>
+                      <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
+    <!-- Modal para ver diplomas en grande -->
+    <div class="diploma-modal" id="diplomaModal">
+      <span class="close-modal" id="closeModal">&times;</span>
+      <img class="modal-content" id="modalImage" alt="Diploma">
+    </div>
+
     <footer>
       <h5>Luis Cardona</h5>
-      <h5>©CopyRight 2024 All Rights Reserved</h5>
+      <h5>©CopyRight 2026 All Rights Reserved</h5>
     </footer>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
 </html>

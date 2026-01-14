@@ -38,16 +38,138 @@ body{
 .navbar{
     background: linear-gradient(270deg, rgba(127,206,226,1) 50%, rgba(34,67,92,1) 100%);
     justify-content: center !important;
-    height: 100px;
+    min-height: 100px;
+    padding: 15px 0;
+    position: relative;
     
-    .btn-secondary{
-        margin-left: 10px;
+    & .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
-    & .btn-secondary:hover{
-        background-color: #22435C ;
-        scale: 1.2;
-        
+    & .navbar-brand {
+        display: flex;
+        align-items: center;
+    }
+
+    & .logo-img {
+        width: 70px;
+        height: 70px;
+        transition: transform 0.3s ease;
+    }
+
+    & .logo-img:hover {
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    & .navbar-nav {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 8px;
+        border-radius: 50px;
+        backdrop-filter: blur(10px);
+    }
+
+    & .nav-link-custom {
+        display: flex;
+        align-items: center;
+        padding: 14px 32px;
+        margin: 0;
+        color: #fff;
+        font-weight: 600;
+        font-size: 16px;
+        letter-spacing: 0.5px;
+        text-decoration: none;
+        border-radius: 50px;
+        position: relative;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background: transparent;
+        border: none;
+        white-space: nowrap;
+    }
+
+    & .nav-link-custom::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 50px;
+        background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    & .nav-link-custom:hover {
+        color: #22435C;
+        background: #fff;
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15), 0 0 0 3px rgba(255,255,255,0.3);
+    }
+
+    & .nav-link-custom:hover::after {
+        opacity: 1;
+    }
+
+    & .nav-link-custom:active {
+        transform: translateY(-1px) scale(1.02);
+    }
+
+    & .navbar-toggler {
+        border: 2px solid #fff;
+        padding: 8px 12px;
+        z-index: 1001;
+    }
+
+    & .navbar-toggler:focus {
+        box-shadow: 0 0 0 0.25rem rgba(127, 206, 226, 0.5);
+    }
+
+    & .btn-close-menu {
+        display: none;
+    }
+}
+
+/* Overlay para el menú móvil */
+body.menu-open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Clases reutilizables para iconos SVG */
+.icon-svg {
+    vertical-align: middle;
+    transition: all 0.3s ease;
+}
+
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: #22435C;
+        transform: translateX(5px);
+    }
+
+    &:hover .icon-svg {
+        stroke: #22435C;
     }
 }
 
@@ -165,16 +287,34 @@ body{
     & .fila_iconos_leng{
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        
+        & .skill-item {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 20px 20px 20px;
+            width: auto;
+        }
         
         & .icono_leng_Prog{
             width: 100px;
             height: 70px;
-            margin-inline: 30px;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             view-timeline-name: --seccion;
             view-timeline-axis: block;
             animation-timeline: --seccion;
             animation-name: show_seccion;
+        }
+        
+        & .skill-name {
+            font-size: 11px;
+            color: #22435C;
+            font-weight: 500;
+            text-align: center;
+            margin-top: 3px;
+            white-space: nowrap;
         }
     }
 }
@@ -222,15 +362,34 @@ body{
 }
 
 .secc31 {
+    padding: 30px;
+    border-radius: 15px;
+    height: 100%;
+
+    & .titulo_proyecto {
+        color: #22435C;
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 28px;
+    }
+
     & video{
-        width:720px; 
-        height:360px;
-        border-top-left-radius : 95px; 
-        border-bottom-right-radius : 95px; 
+        width: 100%; 
+        max-width: 720px;
+        height: 360px;
+        border-top-left-radius: 95px; 
+        border-bottom-right-radius: 95px; 
         overflow: hidden;
         box-shadow: 5px 5px 10px #aeb9c2;
+        display: block;
+        margin: 0 auto;
     }
-    
+}
+
+.proyectos-educacion-section {
+    padding: 40px 20px;
+    background: transparent;
+    border-radius: 15px;
 }
 
 
@@ -238,25 +397,26 @@ body{
 
 
 .secc4{
-    border-radius: 8px;
-    margin-bottom: 0%;
+    padding: 30px;
+    border-radius: 15px;
     color: #22435C;
-    
-    view-timeline-name: --seccion;
-    view-timeline-axis: block;
-
-    animation-timeline: --seccion;
-    animation-name: show_seccion;
-    animation-range: entry 25% cover 50%;
+    height: 100%;
 
     & .titulo_educacion{
-        color: lightblue;
-        margin-bottom: 20px;
+        color: #22435C;
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 28px;
     }
 
     & .secc4_insti{
         border-radius: 5px;
         color: #898C8E;
+        margin-bottom: 35px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
 
         & .secc4_insti_encabezado{
             display: flex;
@@ -273,109 +433,582 @@ body{
 
 
 
+.diplomas-ia-section {
+    padding: 40px 20px;
+    background: rgba(127, 206, 226, 0.05);
+    border-radius: 15px;
+}
+
 .secc5{
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 0%;
-    color: #22435C;
+    padding: 30px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    height: 100%;
 
     & .titulo_diplomas{
-        color: lightblue;
+        color: #22435C;
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 28px;
+    }
+
+    & .diplomas-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-height: 580px;
+        overflow-y: auto;
+        padding-right: 10px;
+    }
+
+    & .diplomas-grid::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    & .diplomas-grid::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    & .diplomas-grid::-webkit-scrollbar-thumb {
+        background: #2F999E;
+        border-radius: 10px;
+    }
+
+    & .diplomas-grid::-webkit-scrollbar-thumb:hover {
+        background: #22435C;
+    }
+
+    & .diplomas-grid img{
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border: 3px solid #22435C;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(34, 67, 92, 0.2);
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    & .diplomas-grid img:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(47, 153, 158, 0.4);
+        border-color: #2F999E;
+    }
+}
+
+/* Modal para diplomas */
+.diploma-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+
+    &.active {
+        display: flex;
+    }
+
+    & .modal-content {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 0 50px rgba(47, 153, 158, 0.5);
+    }
+
+    & .close-modal {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        color: #fff;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.3s;
+
+        &:hover {
+            color: #2F999E;
+        }
+    }
+}
+
+.secc6.chat-gpt {
+    padding-inline: 30px;
+    padding-block: 0px;
+    height: 100%;
+
+    & .titulo_proyecto {
+        color: #22435C;
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 28px;
+    }
+
+    & .chat-container {
+        background: linear-gradient(135deg, #22435C 0%, #2F999E 100%);
+        padding: 35px 25px 25px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(34, 67, 92, 0.3);
+        color: #fff;
+        height: 100%;
+        min-height: 650px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    & .chat-container::before {
+        content: '';
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        top: -100px;
+        right: -100px;
+    }
+
+    & .chat-container::after {
+        content: '';
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 50%;
+        bottom: -75px;
+        left: -75px;
+    }
+
+    & .chat-icon {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 25px;
+        border-radius: 50%;
+        display: inline-flex;
+        animation: float 3s ease-in-out infinite;
+        z-index: 1;
+    }
+
+    & h4 {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 15px 0;
+        z-index: 1;
+    }
+
+
+    & .chat-description {
+        font-size: 15px;
+        line-height: 1.6;
+        max-width: 300px;
+        opacity: 0.95;
+        z-index: 1;
+    }
+
+    & .coming-soon {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        background: rgba(255, 255, 255, 0.3);
+        padding: 12px 25px;
+        border-radius: 25px;
+        z-index: 1;
         margin-bottom: 20px;
     }
 
-    img{
-        width: calc(33.33% - 10px);
-        max-width: 950px;
-        height: 275PX;
-        border: 3px solid #22435C;
-        border-radius: 8%;
-        box-shadow: 3px 2px 10px #0581e7;
-    } 
+    & .coming-soon span:first-child {
+        font-size: 22px;
+        animation: bounce 1s ease-in-out infinite;
+    }
+
+    & .chat-input-container {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 10px 15px;
+        border-radius: 25px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    & .chat-input {
+        flex: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: #22435C;
+        font-size: 15px;
+        padding: 8px 12px;
+    }
+
+    & .chat-input::placeholder {
+        color: rgba(34, 67, 92, 0.5);
+    }
+
+    & .chat-send-btn {
+        background: linear-gradient(135deg, #22435C 0%, #2F999E 100%);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: not-allowed;
+        transition: all 0.3s ease;
+        color: #fff;
+    }
+
+    & .chat-send-btn:not(:disabled) {
+        cursor: pointer;
+    }
+
+    & .chat-send-btn:not(:disabled):hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 12px rgba(47, 153, 158, 0.4);
+    }
 }
 
-
-
-.chat-gpt>img{
-    width: 200px;
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+}
 
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
 
 
 
 footer{
     text-align: center;
     background: linear-gradient(0deg, rgba(34,67,92,1) 0%, rgba(127,206,226,1) 100%);
-    height: 200px;
+    height: 120px;
     color: #d4d2d2;
-    padding-top: 80px;
+    padding-top: 40px;
     box-shadow: 10px 10px 15px  rgba(127,206,226,0.1) inset;
+
+    & h5 {
+        margin: 5px 0;
+        font-size: 16px;
+    }
 }
 
 
+/* Media Queries */
 
+/* Tablets y dispositivos medianos */
+@media only screen and (max-width: 991px) {
+    .navbar {
+        & .navbar-collapse {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: linear-gradient(180deg, rgba(34,67,92,1) 0%, rgba(47,153,158,1) 100%);
+            padding: 120px 30px 30px;
+            transition: right 0.4s ease-in-out;
+            z-index: 1000;
+            overflow-y: auto;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+        }
 
+        & .navbar-collapse.show {
+            right: 0;
+        }
 
-@media only screen and (max-width : 450px) {
+        & .navbar-nav {
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            background: transparent;
+            padding: 0;
+        }
+
+        & .nav-link-custom {
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            padding: 14px 20px;
+            font-size: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+        }
+
+        & .nav-link-custom:hover {
+            background: rgba(255, 255, 255, 0.25);
+            color: #fff;
+            transform: translateX(5px);
+        }
+
+        & .nav-link-custom::after {
+            display: none;
+        }
+
+        & .btn-close-menu {
+            display: block;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            padding: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        & .btn-close-menu:hover {
+            transform: rotate(90deg);
+        }
+
+        & .logo-img {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
+/* Tablets y móviles medianos */
+@media only screen and (max-width: 768px) {
+    .card {
+        width: 100%;
+        max-width: 22rem;
+        
+        & .figura_foto {
+            height: 350px;
+            
+            & img {
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+        
+        & .figura_foto:hover > .capa h6 {
+            margin-top: 150px;
+        }
+    }
+
+    .secc2 {
+        & .fila_iconos_leng {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 0 10px;
+        }
+        
+        & .skill-item {
+            width: 23% !important;
+            min-width: 70px;
+            max-width: 90px;
+            margin: 0 0.5% 15px 0.5% !important;
+            display: inline-flex !important;
+        }
+        
+        & .icono_leng_Prog {
+            width: 55px !important;
+            height: 40px !important;
+        }
+        
+        & .skill-name {
+            font-size: 8.5px !important;
+        }
+    }
+    
+    .proyectos-educacion-section {
+        padding: 15px 10px;
+    }
+    
+    .secc4 {
+        & .secc4_insti {
+            margin-bottom: 25px !important;
+            
+            &:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+    }
+    
+    .diplomas-ia-section {
+        padding: 15px 10px;
+    }
+}
+
+@media only screen and (max-width : 390px) {
     
     .navbar{
-        & .btn-secondary{
-        margin-left: 0px;
+        padding: 10px 0;
+        min-height: auto;
+
+        & .logo-img {
+            width: 50px;
+            height: 50px;
+        }
+
+        & .navbar-collapse {
+            width: 280px;
+            padding: 100px 25px 25px;
+        }
+
+        & .navbar-nav {
+            gap: 12px;
+        }
+
+        & .nav-link-custom{
+            padding: 14px;
+            font-size: 15px;
+            border-radius: 8px;
         }
     }
 
 
     .card{
-        width: 22rem;
+        width: 100%;
+        max-width: 20rem;
         position: relative;
     }
 
     .figura_foto{
-    height: 100px;
+        height: 280px;
+        
+        & img {
+            object-fit: cover;
+            object-position: center top;
+        }
     }
     
     .figura_foto:hover > .capa h6{
-        margin-top: 100px;
+        margin-top: 120px;
     }
-
-    .secc2{
-        & .fila_iconos_leng{
-            flex-direction: row;
+    
+    .secc2 {
+        & .skill-item {
+            width: 22% !important;
+            min-width: 65px;
+            max-width: 75px;
+        }
+        
+        & .icono_leng_Prog {
+            width: 50px !important;
+            height: 38px !important;
+        }
+        
+        & .skill-name {
+            font-size: 8px !important;
         }
     }
     
     .secc31{
-        width: 355px !important;
-        margin: 0px;
+        padding: 20px !important;
+        margin-bottom: 20px !important;
     }
 
-
     .secc31 > video{
-        width: 350px !important;
+        width: 100% !important;
+        max-width: 350px;
         height: 180px;
         border-radius: 10px;
-      
         overflow: hidden;
         transform: translateZ(0);
         box-shadow: 0 19px 51px 0 rgba(0,0,0,0.16), 0 14px 19px 0 rgba(0,0,0,0.07);
     }
 
+    .proyectos-educacion-section {
+        padding: 10px 10px 5px 10px;
+        margin-bottom: 15px;
 
-
-    
-    .secc5{
-       margin: 0px !important;
-       padding: 15px !important;
-       gap: 15px;
-        img{
-            width: calc(50% - 15px);;
-            border: 2px solid #22435C;
-        } 
+        & .row {
+            flex-direction: column;
+            gap: 15px;
+        }
     }
 
+    .secc4 {
+        padding: 15px !important;
+        
+        & .titulo_educacion {
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        
+        & .secc4_insti {
+            margin-bottom: 18px !important;
+            
+            &:last-child {
+                margin-bottom: 0 !important;
+            }
+            
+            & h6 {
+                margin-top: 5px;
+                margin-bottom: 0;
+            }
+        }
+    }
 
+    .diplomas-ia-section {
+        padding: 10px 10px 5px 10px;
+
+        & .row {
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+
+    .secc5 {
+        margin-bottom: 20px !important;
+        padding: 20px !important;
+
+        & .diplomas-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        & .diplomas-grid img{
+            height: 200px;
+        }
+    }
+
+    .secc6.chat-gpt {
+        padding: 20px !important;
+        
+        & .chat-container {
+            padding: 25px 20px;
+            min-height: 450px;
+        }
+        
+        & .chat-icon {
+            padding: 18px;
+        }
+        
+        & .chat-description {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+    }
 }
