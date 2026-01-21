@@ -474,16 +474,21 @@
                   </svg>
                 </div>
                 <h4>Asistente Inteligente</h4>
-                <p class="chat-description">Estamos trabajando en una experiencia conversacional innovadora para mejorar tu interacción con el portafolio.</p>
-                <div class="coming-soon">
-                  <span>🚀</span>
-                  <span>Próximamente</span>
+                <p class="chat-description">¡Hola! 👋 Pregúntame sobre la experiencia, proyectos y habilidades de Luis.</p>
+                
+                <!-- Área de mensajes -->
+                <div class="chat-messages" id="chatMessages">
+                  <div class="bot-message">
+                    <div class="message-content">
+                      ¡Hola! Soy el asistente virtual de Luis Cardona. ¿En qué puedo ayudarte hoy? 😊
+                    </div>
+                  </div>
                 </div>
                 
                 <!-- Input de chat estilo WhatsApp -->
                 <div class="chat-input-container">
-                  <input type="text" class="chat-input" placeholder="Escribe un mensaje..." disabled>
-                  <button class="chat-send-btn" disabled>
+                  <input type="text" class="chat-input" id="chatInput" placeholder="Escribe un mensaje..." autocomplete="off">
+                  <button class="chat-send-btn" id="chatSendBtn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <line x1="22" y1="2" x2="11" y2="13"></line>
                       <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>

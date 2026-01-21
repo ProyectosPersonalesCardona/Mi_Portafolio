@@ -99,4 +99,119 @@ document.addEventListener('DOMContentLoaded', function() {
       closeDiplomaModal();
     }
   });
+
+  // ===== CHAT IA =====
+  const chatInput = document.getElementById('chatInput');
+  const chatSendBtn = document.getElementById('chatSendBtn');
+  const chatMessages = document.getElementById('chatMessages');
+  
+  let conversationHistory = [];
+
+  // Función para añadir un mensaje al chat
+  function addMessage(content, isUser = false) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = isUser ? 'user-message' : 'bot-message';
+    
+    const messageContent = document.createElement('div');
+    messageContent.className = 'message-content';
+    messageContent.textContent = content;
+    
+    messageDiv.appendChild(messageContent);
+    chatMessages.appendChild(messageDiv);
+    
+    // Scroll al último mensaje
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  // Función para mostrar el indicador de escritura
+  function showTypingIndicator() {
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'bot-message typing-indicator';
+    typingDiv.id = 'typingIndicator';
+    
+    const messageContent = document.createElement('div');
+    messageContent.className = 'message-content';
+    messageContent.innerHTML = '<span></span><span></span><span></span>';
+    
+    typingDiv.appendChild(messageContent);
+    chatMessages.appendChild(typingDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  // Función para remover el indicador de escritura
+  function removeTypingIndicator() {
+    const typingIndicator = document.getElementById('typingIndicator');
+    if (typingIndicator) {
+      typingIndicator.remove();
+    }
+  }
+
+  // Función para enviar mensaje
+  async function sendMessage() {
+    const message = chatInput.value.trim();
+    
+    if (message === '') return;
+    
+    // Agregar mensaje del usuario
+    addMessage(message, true);
+    conversationHistory.push({ role: 'user', content: message });
+    
+    // Limpiar input
+    chatInput.value = '';
+    
+    // Deshabilitar botón mientras procesa
+    chatSendBtn.disabled = true;
+    chatInput.disabled = true;
+    
+    // Mostrar indicador de escritura
+    showTypingIndicator();
+    
+    try {
+      // Llamar a la API
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message: message,
+          conversationHistory: conversationHistory.slice(-10) // Solo últimos 10 mensajes
+        }),
+      });
+      
+      const data = await response.json();
+      
+      // Remover indicador de escritura
+      removeTypingIndicator();
+      
+      if (data.success) {
+        // Agregar respuesta del bot
+        addMessage(data.reply, false);
+        conversationHistory.push({ role: 'assistant', content: data.reply });
+      } else {
+        addMessage('Lo siento, hubo un error al procesar tu mensaje. Por favor intenta de nuevo.', false);
+      }
+      
+    } catch (error) {
+      console.error('Error al enviar mensaje:', error);
+      removeTypingIndicator();
+      addMessage('Lo siento, no pude conectarme al servidor. Verifica tu conexión e intenta nuevamente.', false);
+    } finally {
+      // Rehabilitar botón e input
+      chatSendBtn.disabled = false;
+      chatInput.disabled = false;
+      chatInput.focus();
+    }
+  }
+
+  // Event listeners para el chat
+  if (chatSendBtn && chatInput) {
+    chatSendBtn.addEventListener('click', sendMessage);
+    
+    chatInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    });
+  }
 });
