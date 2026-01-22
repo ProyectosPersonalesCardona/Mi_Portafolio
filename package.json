@@ -1,15 +1,7 @@
 {
   "name": "mi-portafolio",
   "version": "1.0.0",
-  "description": "Portafolio personal de Luis Cardona con chatbot IA",
-  "main": "index.js",
-  "scripts": {
-    "dev": "vercel dev",
-    "deploy": "vercel"
-  },
-  "keywords": ["portafolio", "chatbot", "openai"],
-  "author": "Luis Enrique Cardona Castro",
-  "license": "MIT",
+  "type": "module",
   "dependencies": {
     "openai": "^4.24.1"
   }
